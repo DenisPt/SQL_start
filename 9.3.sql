@@ -13,10 +13,24 @@ begin
 	end case;
 end//
 
-select hello();
-
 --------------------------------2--------------------------------
-
+drop trigger if exists chck_ins//
+create trigger chck_ins before insert on products
+for each row
+begin
+	if (new.name is null and new.description is null) then 
+		signal sqlstate '45000' set MESSAGE_TEXT = 'Имя и описание не может быть пустым одновременно';
+	end if;
+end//
+				       
+drop trigger if exists chck_upd//
+create trigger chck_upd before update on products
+for each row
+begin 
+	if  (new.name is null and new.description is null) then 
+		signal sqlstate '45000' set MESSAGE_TEXT = 'Имя и описание не может быть пустым одновременно';
+	end if;
+end//
 
 --------------------------------3--------------------------------
 drop function if exists fibonacci//
