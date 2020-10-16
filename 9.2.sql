@@ -9,3 +9,4 @@ grant select on shop.* to shop_read;
 create view username as select id, name from accounts;
 create user user_read;
 grant select on test_2.username to user_read; -- test_2 название БД, в которой создана таблица
+
