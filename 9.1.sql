@@ -5,6 +5,7 @@ insert into sample.users select * from shop.users where id = 1;
 delete from shop.users where id = 1;	-- строку добавляем если под переносом понимаем добавление в БД sample, и при этом удаление из исходной БД shop
 commit;
 
+
 ---------------------------------------2---------------------------------
 use shop;
 create or replace view v1 as
