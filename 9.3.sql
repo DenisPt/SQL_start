@@ -13,6 +13,7 @@ begin
 	end case;
 end//
 
+				       
 --------------------------------2--------------------------------
 drop trigger if exists chck_ins//
 create trigger chck_ins before insert on products
