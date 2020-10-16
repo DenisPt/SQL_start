@@ -20,7 +20,7 @@ select hello();
 
 --------------------------------3--------------------------------
 drop function if exists fibonacci//
-create function fibonacci(num int)
+create function fibonacci(num int unsigned)
 returns int deterministic
 begin
 	declare fib, fib_1, fib_2, i int default 0;
